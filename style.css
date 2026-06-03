@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    --primary-red: #E41A22;
+    --text-black: #000000;
+    --text-gray: #333333;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Ranking Section Container */
+.ranking-section {
+    position: relative;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background: #fff;
+}
+
+/* Marquee Styles */
+.marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.marquee-content img {
+    height: 250px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.marquee-content img:hover {
+    transform: scale(1.02);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Text Content Area */
+.text-content {
+    text-align: center;
+    max-width: 1200px;
+    padding: 40px 20px;
+}
+
+.main-heading {
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--text-black);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.sub-heading {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-black);
+    margin-top: 20px;
+}
+
+/* Floating Admission Tabs */
+.floating-tabs {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1000;
+}
+
+.tab {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 15px 10px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px;
+    transition: padding-right 0.3s ease;
+}
+
+.tab:hover {
+    padding-right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-heading { font-size: 4rem; }
+    .sub-heading { font-size: 1.5rem; }
+    .marquee-content img { height: 180px; width: 300px; }
+}
+
+@media (max-width: 768px) {
+    .main-heading { font-size: 3rem; }
+    .sub-heading { font-size: 1.2rem; }
+    .floating-tabs { display: none; }
+}

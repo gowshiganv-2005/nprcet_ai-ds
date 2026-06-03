@@ -1,0 +1,2 @@
+cd "d:\Desktop\dept_website"
+npm run dev
