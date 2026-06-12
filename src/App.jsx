@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import adLogo from './assets/logo.png'
-import bgVideo from './assets/video.mp4'
+import bgVideo from './assets/dept.mp4'
 
 const topImages = [
   "/carousel/IMG_20260603_183910.jpg",
