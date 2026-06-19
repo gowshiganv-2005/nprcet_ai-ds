@@ -229,7 +229,7 @@ function VideoHighlight() {
           <h2>Experience AI &amp; Data Science</h2>
           <div className="hero-divider" style={{ margin: '14px 0 20px 0', width: '50px' }} />
           <p>Innovating the future, one line of code at a time.</p>
-          <p style={{ maxWidth: '750px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: '1.8', opacity: 0.9 }}>
+          <p className="video-body-text">
             Join a thriving ecosystem of brilliant minds. We push boundaries through extensive computational modeling, highly advanced algorithms, and a strictly hands-on approach to modern data engineering. Discover an education that transcends textbooks and immerses you in the raw forefront of global technology.
           </p>
         </div>
@@ -372,18 +372,18 @@ function AboutSection() {
                We strongly believe that computing power alone is not enough; it is the human intellect driving these algorithms that will shape the future. By maintaining high-end laboratories, fostering deep academic-corporate partnerships, and employing a faculty composed of leading researchers, we provide an ecosystem where raw intellectual curiosity is forged into technical mastery and ethical intelligence.
             </p>
             
-            <div className="about-features" style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.2rem' }}>
-              <div style={{fontWeight: 700, color: 'var(--navy-deep)', display: 'flex', alignItems: 'center'}}>
-                 <span style={{color: 'var(--gold)', marginRight: '10px', fontSize: '1.4rem'}}>✦</span> Industry-Aligned Syllabus
+            <div className="about-features">
+              <div className="about-feature-item">
+                 <span className="about-feature-icon">✦</span> Industry-Aligned Syllabus
               </div>
-              <div style={{fontWeight: 700, color: 'var(--navy-deep)', display: 'flex', alignItems: 'center'}}>
-                 <span style={{color: 'var(--gold)', marginRight: '10px', fontSize: '1.4rem'}}>✦</span> 100% Placement Support
+              <div className="about-feature-item">
+                 <span className="about-feature-icon">✦</span> 100% Placement Support
               </div>
-              <div style={{fontWeight: 700, color: 'var(--navy-deep)', display: 'flex', alignItems: 'center'}}>
-                 <span style={{color: 'var(--gold)', marginRight: '10px', fontSize: '1.4rem'}}>✦</span> Elite Research Labs
+              <div className="about-feature-item">
+                 <span className="about-feature-icon">✦</span> Elite Research Labs
               </div>
-              <div style={{fontWeight: 700, color: 'var(--navy-deep)', display: 'flex', alignItems: 'center'}}>
-                 <span style={{color: 'var(--gold)', marginRight: '10px', fontSize: '1.4rem'}}>✦</span> Global Tech Interfacing
+              <div className="about-feature-item">
+                 <span className="about-feature-icon">✦</span> Global Tech Interfacing
               </div>
             </div>
           </div>
@@ -938,15 +938,20 @@ function App() {
           <span></span>
         </button>
 
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="mobile-overlay" onClick={() => setMobileMenuOpen(false)} />
+        )}
+
         <nav className={`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <a href="#">About</a>
-          <a href="#">Admissions</a>
-          <a href="#">Academics</a>
-          <a href="#">Research</a>
-          <a href="#">Campus</a>
-          <a href="#">Placements</a>
-          <a href="#">Alumni</a>
-          <a href="#" className="nav-cta">Apply Now</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>About</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Admissions</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Academics</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Research</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Campus</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Placements</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>Alumni</a>
+          <a href="#" className="nav-cta" onClick={() => setMobileMenuOpen(false)}>Apply Now</a>
         </nav>
       </header>
 
